@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#define ATRACE_TAG (ATRACE_TAG_POWER | ATRACE_TAG_HAL)
 #define LOG_TAG "android.hardware.power-service.xiaomi-libperfmgr"
 
 #include "Power.h"
@@ -28,7 +27,6 @@
 #include <android-base/strings.h>
 
 #include <utils/Log.h>
-#include <utils/Trace.h>
 
 namespace aidl {
 namespace google {
@@ -82,7 +80,6 @@ void endAllHints(std::shared_ptr<HintManager> mHintManager) {
 
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(DEBUG) << "Power setMode: " << toString(type) << " to: " << enabled;
-    ATRACE_INT(toString(type).c_str(), enabled);
     switch (type) {
 #ifdef TAP_TO_WAKE_NODE
         case Mode::DOUBLE_TAP_TO_WAKE:
@@ -154,7 +151,6 @@ ndk::ScopedAStatus Power::isModeSupported(Mode type, bool *_aidl_return) {
 
 ndk::ScopedAStatus Power::setBoost(Boost type, int32_t durationMs) {
     LOG(DEBUG) << "Power setBoost: " << toString(type) << " duration: " << durationMs;
-    ATRACE_INT(toString(type).c_str(), durationMs);
     switch (type) {
         case Boost::INTERACTION:
             if (mSustainedPerfModeOn || mBatterySaverOn) {
