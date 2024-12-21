@@ -230,7 +230,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.ginkgo
+    android.hardware.light-service.ginkgo
 
 # Lineage Health
 PRODUCT_PACKAGES += \
