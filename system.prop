@@ -10,6 +10,12 @@ persist.vendor.btstack.absvolfeature=true
 persist.vendor.btstack.enable.splita2dp=true
 vendor.bluetooth.soc=cherokee
 
+# Spark-OS
+ro.spark.device.name=Ginkgo
+ro.spark.group.url=https://t.me/Miracleprjkt
+ro.spark.maintainer=F4TTT
+ro.spark.maintainer.username=F4TTT
+
 # Blur
 persist.sys.sf.disable_blurs=1
 
